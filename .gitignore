@@ -13,6 +13,7 @@
 .idea/**/tasks.xml
 .idea/**/dictionaries
 .idea/**/shelf
+aamc-admin.iml
 
 # Sensitive or high-churn files
 .idea/**/dataSources/
