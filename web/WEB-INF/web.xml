@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <context-param>
+        <param-name>db_userid</param-name>
+        <param-value>mmayfield</param-value>
+    </context-param>
+    <context-param>
+        <param-name>db_password</param-name>
+        <param-value>DuabwKfjhbaa</param-value>
+    </context-param>
+    <listener>
+        <listener-class>
+            jdbc.GlobalConnectionPool
+        </listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>AdminTools</servlet-name>
+        <servlet-class>servlets.AdminTools</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminTools</servlet-name>
+        <url-pattern>/AdminTools</url-pattern>
+    </servlet-mapping>
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>authentication.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/secured/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+</web-app>
